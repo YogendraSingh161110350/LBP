@@ -1,7 +1,8 @@
 One programming language has the following keywords that cannot be used as identifiers. break,case,continue,default,defer,else,for,func,goto,if,map,range,return,struct,type,var
 write a program to find if the given word is a keyword or not.
 
-Input Format
+Input Format:
+//this is importan change
 
 string from the user
 
