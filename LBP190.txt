@@ -1,0 +1,98 @@
+A person went to an exhibition. A lucky draw is going on, where one should buy a ticket. And if they ticket number appear on the screen, that ticket will be considered as jackpot winner.
+he knows the secret of picking up the ticket number, which will be considered for the jackpot.
+
+sort the ticket number in the increasing order.
+Now, the difference between the adjacent digits should not be more than 2.
+If his ticket follows the above condition, then there are more chances to win the jackpot.
+
+Given a ticket number, find whether the ticket is eligible to be part of jackpot or not. Print "Yes/No" based on the result.
+
+Input Format
+
+ticket number
+
+Constraints
+
+no
+
+Output Format
+
+Yes or No
+
+Sample Input 0
+
+171
+Sample Output 0
+
+No
+Sample Input 1
+
+123
+Sample Output 1
+
+Yes
+
+
+
+
+
+
+
+
+
+
+
+
+==============================Solution============
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static ArrayList<Integer> getArrayList(int num)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+        while(num!=0)
+        {
+            int rem = num%10;
+            list.add(rem);
+            num/=10;
+        }
+        return list;
+    }
+    public static void main(String... args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        ArrayList<Integer> list = getArrayList(num);
+        int arr[] = new int[list.size()];
+        int k=0;
+        for(Integer a:list){
+            arr[k] = a;
+            k++;
+        }
+            
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        String ans = "Yes";
+       for(int i = 0;i<arr.length-1;i++)
+       {
+           if(arr[i+1]-arr[i]>2)
+           {
+               ans = "No";
+               break;
+           }
+       }
+        System.out.print(ans);
+    }
+}
