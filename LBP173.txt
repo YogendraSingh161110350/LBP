@@ -1,0 +1,77 @@
+Given a maximum of four digit to the base 17(10=>A,11=>B,12=>C,13=>D,14=>E,15=>F,16=>G) as input, output its decimal value.
+
+Input Format
+
+a string value
+
+Constraints
+
+no
+
+Output Format
+
+an integer value with base 17
+
+Sample Input 0
+
+D
+Sample Output 0
+
+13
+Sample Input 1
+
+ABC
+Sample Output 1
+
+3089
+Sample Input 2
+
+A
+Sample Output 2
+
+10
+
+
+
+--------------------Solution------------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static int getNumber(String str)
+    {
+        // for checking iteration
+        int count= 0;
+        //for adding number
+        int num = 0;
+        for(int i=str.length()-1;i>=0;i--)
+        {
+               char ch = str.charAt(i);
+               if(ch=='A')
+                   //formula of number in the base of Base 17
+                   num+=(Math.pow(17,count)*10);
+               else if(ch=='B')
+                   num+=(Math.pow(17,count)*11);
+                else if(ch=='C') 
+                    num+=(Math.pow(17,count)*12);
+                else if(ch=='D')
+                    num+=(Math.pow(17,count)*13);
+                else if(ch=='E') 
+                    num+=(Math.pow(17,count)*14);
+                else if(ch=='F')
+                    num+=(Math.pow(17,count)*15);
+                else if(ch=='G')
+                    num+=(Math.pow(17,count)*16);
+                count++;
+                    
+        }
+        return num;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       String str = sc.nextLine();
+       System.out.print(getNumber(str));
+    }
+}
