@@ -1,0 +1,66 @@
+Write an algorithm to generate the token number from the application ID by doing this modifications.
+R1. If the digit is even add 1 to it.
+R2. If the digit is odd sub 1 from it.
+
+Input Format
+
+a number from the user
+
+Constraints
+
+no
+
+Output Format
+
+token number
+
+Sample Input 0
+
+2347
+Sample Output 0
+
+3256
+Sample Input 1
+
+245567
+Sample Output 1
+
+354476
+
+
+
+
+-------------------------Solution----------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getNumber(int num)
+    {
+        int rev = 0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            if(rem%2==0)
+                rev = rev*10+(rem+1);
+            else
+                rev = rev*10+(rem-1);
+            num/=10;
+        }
+        while(rev!=0)
+        {
+            int rem = rev%10;
+            num = rem+num*10;
+            rev/=10;
+        }
+        return num;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.print(getNumber(num));
+    }
+}
