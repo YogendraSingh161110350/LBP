@@ -55,3 +55,43 @@ public class Solution
         System.out.print(getRecurssiveSum( num));
     }
 }
+
+
+
+
+
+
+--------------------------Second Approach
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getDigitalSum(int num)
+    {
+        int sum  = 0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            sum +=rem;
+            num/=10;
+        }
+        return sum;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        while(true)
+        {
+            int digitalSum = getDigitalSum(num);
+            if(digitalSum>=0 && digitalSum<=9)
+            {
+                System.out.print(digitalSum);
+                break;
+            }
+            num = digitalSum;
+        }
+    }
+}
