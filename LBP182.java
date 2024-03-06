@@ -41,16 +41,16 @@ Sample Output 2
 
 
 
-
+=========================SOLUTION================================
 
 import java.io.*;
 import java.util.*;
 
-public class Solution 
+public class Solution
 {
     private static boolean isPrime(int num)
     {
-        if(num==1 || num<0)
+        if(num==1)
             return false;
         for(int i=2;i*i<=num;i++)
         {
@@ -59,37 +59,33 @@ public class Solution
         }
         return true;
     }
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-       Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++)
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i=0;i<len;i++)
         {
             arr[i] = sc.nextInt();
         }
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for(int a:arr)
+        for(int i=0;i<len;i++)
         {
-            
-            if(isPrime(a))
+           // System.out.println(isPrime(arr[i]));
+            if(arr[i]>0 && isPrime(arr[i]) && min>arr[i])
             {
-                if(max<a)
-                    max=a;
-                if(min>a)
-                    min=a;
+                min = arr[i];
             }
-                
+            if(arr[i]>0 && isPrime(arr[i]) && max<arr[i])
+            {
+                max = arr[i];
+            }
         }
-        if(max==min)
-        {
-            System.out.print(0);
-        }
-        else
-        {
-            System.out.print(max-min);
-        }
+      
+            if(max>min)
+                System.out.print(max-min);
+            else
+                System.out.print(0);
     }
-    
 }
