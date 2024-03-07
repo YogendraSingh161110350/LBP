@@ -1,0 +1,58 @@
+Given an array A of N integer numbers. The task is to rewrite the array by putting all multiples of 10 at the end of the given array.
+Note: The order of the numbers which arenot multiples of 10 should remain unaltered, and similarly. the order of all multiples of 10 should be unaltered.
+
+Input Format
+
+N and Array Elements
+
+Constraints
+
+no
+
+Output Format
+
+updated array
+
+Sample Input 0
+
+9
+10 12 5 40 30 7 50 9 10
+Sample Output 0
+
+12 5 7 9 10 40 30 50 10
+Sample Input 1
+
+5
+10 2 3 4 5
+Sample Output 1
+
+2 3 4 5 10
+
+-----------------------------Solution-------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int len = sc.nextInt();
+       int arr[] = new int[len];
+        for(int i= 0;i<len;i++)
+       {
+           arr[i] = sc.nextInt();
+       }
+        for(int i=0;i<len;i++)
+        {
+            if(arr[i]%10!=0)
+                System.out.print(arr[i]+" ");
+        }
+        for(int i=0;i<len;i++)
+        {
+            if(arr[i]%10==0)
+                System.out.print(arr[i]+" ");
+        }
+    }
+}
