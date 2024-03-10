@@ -1,0 +1,71 @@
+
+In a mathematics class, the students are beign taught power function. So "a" raised to the power of "b" is shown as a^b and the calculatation goes as a*a*a...b times. Now there is slight twist to the problem, the students have to find out the last digit of the resultant a^b.
+
+Input Format
+
+an integer value as base and power
+
+Constraints
+
+no
+
+Output Format
+
+last digit of a^b
+
+Sample Input 0
+
+2 3
+Sample Output 0
+
+8
+Sample Input 1
+
+10 2
+Sample Output 1
+
+0
+Sample Input 2
+
+12 2
+Sample Output 2
+
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------Solution By Yogendra singh----------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getLastDigit(int a,int b)
+    {
+        int res = 1;
+	//instead of for Loop You can use Math.pow(a,b)
+        for(int i=1;i<=b;i++)
+        {
+            res*=a;
+        }
+        return res%10;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.print(getLastDigit(a,b));
+    }
+}
