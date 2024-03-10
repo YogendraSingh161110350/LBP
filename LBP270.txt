@@ -1,0 +1,50 @@
+The teacher in a school has started to teach the very basics rule for a sentence is that it should start with a capital letter and ends with a full stop. If the sentence fails any of the above mentioned criteria, it will be an incorrect sentence. Make a program to validate whether a given statement is a correct sentence or not. The program should return True/False based on the validity.
+
+Input Format
+
+a string from the user
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+This is demo.
+Sample Output 0
+
+true
+Sample Input 1
+
+hello.
+Sample Output 1
+
+false
+
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       String str = sc.nextLine().trim();
+       char firstChar = str.charAt(0);
+       char lastChar = str.charAt(str.length()-1);
+       if((firstChar>='A'&&firstChar<='Z') && lastChar=='.')
+           System.out.print(true);
+        else
+            System.out.print(false);
+    }
+}
