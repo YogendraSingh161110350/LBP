@@ -1,0 +1,79 @@
+In a mathematics class, number system is being taught to students, before teaching them 10's and 100's place, they will be taught the number positions. The positions will be starting from sequence number 1 and the direction will be from left to right.
+So if i want to find second position of a digit in the number 90876, it will be 0. if the kth digit exceeds the number position return -1.
+write a program to find the kth digit in a given number.
+
+Input Format
+
+integer value and kth digit
+
+Constraints
+
+no
+
+Output Format
+
+no
+
+Sample Input 0
+
+90876
+2
+Sample Output 0
+
+0
+Sample Input 1
+
+90876
+3
+Sample Output 1
+
+8
+Sample Input 2
+
+90876
+1
+Sample Output 2
+
+9
+
+
+---------------------Yogendra singh Soution---------------------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getRevese(int num)
+    {
+        int rev = 0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            rev = rev*10+rem;
+            num/=10;
+        }
+        return rev;
+    }
+    private static int getDigit(int num, int index)
+    {
+        int count = 0;
+        while(num!=0)
+        {
+            count++;
+            int rem = num%10;
+            if(count==index)
+                return rem;
+            num/=10;
+        }
+        return -1;
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int index = sc.nextInt(); 
+       int num = getRevese(n) ;
+       System.out.print(getDigit(num,index)) ;
+    }
+}
