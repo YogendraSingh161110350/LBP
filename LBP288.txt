@@ -1,0 +1,60 @@
+Write a program to check whether a string not having alphabet 'a'?
+
+Input Format
+
+string from the user
+
+Constraints
+
+con
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+apple
+Sample Output 0
+
+true
+Sample Input 1
+
+demo
+Sample Output 1
+
+falseimport java.io.*;
+import java.util.*;
+
+
+
+
+
+
+
+
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n = (str.length()/2);
+        boolean status = false;
+        for(int i=0;i<=n-1;i++)
+        {
+            if(str.charAt(i)=='a')
+            {
+                status = true;
+                break;
+            }
+            if(str.charAt(n-1-i)=='a')
+            {
+                status = true;
+                break;
+            }   
+        }
+        System.out.print(status);
+    }
+}

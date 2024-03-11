@@ -1,0 +1,53 @@
+Implement a program to display next 5 characters after input character.
+
+Input Format
+
+a character from the user
+
+Constraints
+
+no
+
+Output Format
+
+next 5 characters exluding input
+
+Sample Input 0
+
+a
+Sample Output 0
+
+b c d e f
+Sample Input 1
+
+m
+Sample Output 1
+
+n o p q r
+
+Sample Input 1
+
+z
+Sample Output 1
+
+a b c d e
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char ch = str.charAt(0);
+        
+        for(int i = 1;i<=5;i++)
+        {
+            System.out.print( (char)(((ch+i-96)%26)+96) +" ");
+        }
+    }
+}
