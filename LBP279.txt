@@ -1,0 +1,82 @@
+A pronic number is a number which is a product of two consecutive integers, that is, a number of the form n(n + 1). Create a function that determines whether a number is pronic or not.
+
+Input Format
+
+a number from the user
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+0
+Sample Output 0
+
+true
+Sample Input 1
+
+7
+Sample Output 1
+
+false
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc  =new Scanner(System.in);
+        int num = sc.nextInt();
+        boolean flag = false;
+        for(int i = 0;i<=num;i++)
+        {
+            if(i*(i+1)==num)
+            {
+                flag = true;
+                break;
+            }
+        }
+       System.out.print(flag);
+    }
+}
+
+
+
+----------------------Best Approach----------------------------
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = -1;
+        boolean flag = false;
+        for(int i = 0;i<=num;i=count*(count+1))
+        {
+            System.out.println("a");
+            count++;
+            if(i==num)
+            {
+                flag = true;
+            }
+        }
+        System.out.print(flag);
+    }
+}
