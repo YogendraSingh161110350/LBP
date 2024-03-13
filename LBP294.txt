@@ -1,0 +1,54 @@
+Currently government is taking lot of measures to control the spread of Coronavirus. As we have caccine now, many campaigns are done to vaccination.
+Health dept is identifying the people in each area and recommended/vaccination of them. They are planning three stages
+stage1: above 60 years
+stage2: between 18 and 60
+stage3: below 18 years
+
+Implement a program to read date of birth of the person and decide he belong to which stage.
+
+Input Format
+
+date of birth
+
+Constraints
+
+no
+
+Output Format
+
+1 or 2 or 3
+
+Sample Input 0
+
+13/05/1952
+Sample Output 0
+
+1
+Sample Input 1
+
+03/12/1972
+Sample Output 1
+
+2
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] arr = str.split("/");
+        int diff = 2022-Integer.parseInt(arr[2]);
+        if(diff>=18 && diff<=60)
+            System.out.print(2);
+        else if(diff<18)
+            System.out.print(3);
+        else
+            System.out.print(1);
+    }
+}

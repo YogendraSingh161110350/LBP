@@ -1,0 +1,80 @@
+Implement a program to convert the given decimal value into octal
+
+Input Format
+
+decimal value
+
+Constraints
+
+no
+
+Output Format
+
+octal number
+
+Sample Input 0
+
+16
+Sample Output 0
+
+20
+Sample Input 1
+
+10
+Sample Output 1
+
+12
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static void getOctal(int num)
+    {
+        int res = 0;
+        List<Integer> list = new ArrayList(); 
+        while(num!=0)
+        {
+            int rem  = num%8;
+            list.add(rem);
+            num/=8;
+        }
+        for(int i = list.size()-1;i>=0;i--)
+            System.out.print(list.get(i));
+    }
+    public static void main(String[] args)  
+    {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+       getOctal(num); 
+       
+    }
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static void getOctal(int num)
+    {
+        StringBuffer sb = new StringBuffer();
+        while(num!=0)
+        {
+            int rem = num%8;
+            sb.insert(0,rem);
+            num/=8;
+        }
+        System.out.print(sb);
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt(); 
+       getOctal(num); 
+    }
+}
