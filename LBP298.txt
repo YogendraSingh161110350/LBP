@@ -1,0 +1,73 @@
+Implement a program to find absolute diff betwee sum of max digits and sum of min digits present in three integers n1,n2 and n3
+
+Input Format
+
+n1,n2 and n3
+
+Constraints
+
+no
+
+Output Format
+
+int value
+
+Sample Input 0
+
+5213( max = 5, min = 1)
+5698(max = 9, min = 5)
+2153(max = 5 min=1 )
+Sample Output 0
+
+12
+Sample Input 1
+
+1212
+1234
+5678
+Sample Output 1
+
+7
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static void getSum(int[] arr)
+    {
+        int maxSum = 0;
+        int minSum = 0;
+        for(int i = 0;i<3;i++)
+        {
+            int max = Integer.MIN_VALUE;
+            int min = Integer.MAX_VALUE; 
+            int num = arr[i];
+            while(num!=0)
+            {
+                int rem = num%10;
+                if(max<rem)
+                    max = rem;
+                if(min>rem)
+                    min = rem;
+                num/=10;
+            }  
+            maxSum += max;
+            minSum+= min;
+        }
+        System.out.print(Math.abs(maxSum-minSum));
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       int[] arr = new int[3]; 
+       for(int i=0;i<3;i++)
+       {
+           arr[i] = sc.nextInt();
+       }
+      getSum(arr);
+    }
+}
