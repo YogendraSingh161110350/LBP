@@ -1,0 +1,80 @@
+An e-commerce site wishes to enhance its ordering process. They plan to implement a new scheme of OTP generation for order confimations. The OTP can be any number of digits. for OTP generation, the user will be asked for two random numbers where first number is always smaller than second number. The OTP is calculated as the sum of the maximum and minimum prime values in the range of the user-entered numbers. Write a program to generate OTP.
+
+Input Format
+
+two int values
+
+Constraints
+
+fn
+
+Output Format
+
+sum of max and min prime numbers.
+
+Sample Input 0
+
+10 20
+Sample Output 0
+
+30
+Sample Input 1
+
+1 10
+Sample Output 1
+
+9
+
+
+
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static boolean isPrime(int num)
+    {
+        if(num==1)
+            return false;
+        for(int i=2;i*i<=num;i++)
+        {
+            if(num%i==0)
+                return false;
+        }    
+        return true;
+    }
+    private static int getOTP(int n1,int n2)
+    {
+        int min = 0;
+        int max = 0;
+        for(int i = n1;i<=n2;i++)
+        {
+            if(isPrime(i))
+            {
+                min = i;
+                break;
+            }
+                
+        }
+        for(int i=n2;i>=n1;i--)
+        {
+             if(isPrime(i))
+            {
+                max = i;
+                break;
+            }
+        }
+        return max+min;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       System.out.print(getOTP(sc.nextInt(),sc.nextInt())); 
+    }
+}
