@@ -1,0 +1,62 @@
+Write a program to accept a number and check and display whether it is a Niven Number or not.
+Niven Number is that a number which is divisible by its sum of digits.
+
+Input Format
+
+a number
+
+Constraints
+
+n>0
+
+Output Format
+
+Yes or No
+
+Sample Input 0
+
+126
+Sample Output 0
+
+Yes
+Sample Input 1
+
+10
+Sample Output 1
+
+Yes
+Submissions: 189
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static boolean isNiven(int num)
+    {
+        int sum = 0;
+        int temp = num;
+        while(num!=0)
+        {
+            sum+= num%10;
+            num/=10;
+        }
+        return temp%sum==0;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       if(isNiven(sc.nextInt()))
+        System.out.print("Yes");
+          else
+          System.out.print("No");
+    }
+}

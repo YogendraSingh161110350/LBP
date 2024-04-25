@@ -1,0 +1,58 @@
+Given an integer x, return x with its digits reversed.
+
+Input Format
+
+a number from user
+
+Constraints
+
+n>=0
+
+Output Format
+
+reverse of the given number
+
+Sample Input 0
+
+123
+Sample Output 0
+
+321
+Sample Input 1
+
+124
+Sample Output 1
+
+421
+Sample Input 2
+
+0
+Sample Output 2
+
+0
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getReverse(int num)
+    {
+        int rev = 0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            rev = rev*10+rem;
+            num/=10;
+        }
+        return rev;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       System.out.print(getReverse(sc.nextInt())); 
+    }
+}

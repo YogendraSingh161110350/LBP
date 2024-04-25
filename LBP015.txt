@@ -1,0 +1,56 @@
+import java.io.*;
+Program to read a number and check whether it is duck number or not.
+Hint: A duck number is a number which has zeros present in it, but no zero present in the begining of the number.
+
+Input Format
+
+a number from the user
+
+Constraints
+
+n>=0
+
+Output Format
+
+Yes or No
+
+Sample Input 0
+
+123
+Sample Output 0
+
+No
+Sample Input 1
+
+140
+Sample Output 1
+
+Yesimport java.util.*;
+
+
+
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+        while(num!=0)
+        {
+            int rem = num%10;
+            if(rem==0)
+            {
+                num=1;
+                break;
+            }
+            num/=10;
+        }
+        if(num==1)
+        {
+            System.out.print("Yes");
+        }
+        else
+            System.out.print("No");
+    }
+}

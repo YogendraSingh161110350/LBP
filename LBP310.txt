@@ -35,7 +35,7 @@ Sample Input 2
 15
 Sample Output 2
 
-FizzBuzz
+FizzBuzz				
 
 
 

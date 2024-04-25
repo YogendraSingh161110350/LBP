@@ -1,0 +1,57 @@
+Implement a program to calculate sum of prime digits present in the given number
+
+Input Format
+
+a number from the user
+
+Constraints
+
+n>0
+
+Output Format
+
+print sum of prime digits
+
+Sample Input 0
+
+123
+Sample Output 0
+
+5
+Sample Input 1
+
+101
+Sample Output 1
+
+0
+Sample Input 2
+
+142
+Sample Output 2
+
+2
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = 0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            if(rem==2|| rem==3||rem==5||rem==7)
+            {
+                sum+=rem;
+            }    
+            num/=10;
+        }
+        System.out.print(sum);
+    }
+}
