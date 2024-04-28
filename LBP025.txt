@@ -1,0 +1,47 @@
+Create a function/method to convert celsius to fahrenheit
+
+Input Format
+
+celsius
+
+Constraints
+
+no
+
+Output Format
+
+Fahrenheit
+
+Sample Input 0
+
+0
+Sample Output 0
+
+32
+Sample Input 1
+
+4
+Sample Output 1
+
+39
+Sample Input 2
+
+90
+Sample Output 2
+
+194
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+      // f = 9/5(c-32) 
+      System.out.print( (9*num/5)+32 );  
+    }
+}

@@ -1,0 +1,61 @@
+Given a string, determine if it is a Palindrome string or not. A String is Palindrome if it is equal to reverse of the original string.
+
+Input Format
+
+A String from the user
+
+Constraints
+
+Non-empty String
+
+Output Format
+
+Palindrome or not
+
+Sample Input 0
+
+abba
+Sample Output 0
+
+valid
+Sample Input 1
+
+abc
+Sample Output 1
+
+invalid
+Sample Input 2
+
+madam
+Sample Output 2
+
+valid
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int s = 0;
+        int e = str.length()-1;
+        String res = "valid";
+        while(s<=e)
+        {
+            if(str.charAt(s)!=str.charAt(e))
+            {
+                res="invalid";
+                break;
+            }
+            s++;
+            e--;
+        }
+        System.out.print(res);
+    }
+}
