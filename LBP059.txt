@@ -1,0 +1,51 @@
+A word has been split into a left part and right part. Re-form the word by adding both halves together changing the first character to an upper case letter.
+
+Input Format
+
+two strings left and right
+
+Constraints
+
+No
+
+Output Format
+
+Concatenated String with first character as capital letter.
+
+Sample Input 0
+
+prakash
+babu 
+Sample Output 0
+
+Prakashbabu
+Sample Input 1
+
+hacker
+rank
+Sample Output 1
+
+Hackerrank
+Sample Input 2
+
+comp
+lete
+Sample Output 2
+
+Complete
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        String s2 = sc.next();
+        System.out.print(Character.toUpperCase(s1.charAt(0)));
+        System.out.print(s1.substring(1)+s2);
+    }
+}

@@ -1,0 +1,55 @@
+Two Strings a and b are called anagrams, if they contain all the same characters in the same frequencies
+
+Input Format
+
+Two Strings
+
+Constraints
+
+No
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+anagram
+margana
+Sample Output 0
+
+true
+Sample Input 1
+
+python
+java
+Sample Output 1
+
+false
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       String s1 = sc.nextLine();
+       String s2 = sc.nextLine();
+       if(s1.length()==s2.length())
+       {
+            for(int i = 0;i<s1.length();i++)
+            {
+                char ch = s1.charAt(i);
+                s2 = s2.replace(ch,' ');
+            }
+           System.out.print(s2.trim().equals(""));
+       }
+        else
+            System.out.print(false);
+    }
+}

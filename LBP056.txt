@@ -1,0 +1,70 @@
+Create a function/method that takes two Strings and returns true of the first string ends with second string, otherwise return false
+
+Input Format
+
+two strings
+
+Constraints
+
+No
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+abc
+bc
+Sample Output 0
+
+true
+Sample Input 1
+
+abc
+d
+Sample Output 1
+
+false
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+       String a = sc.nextLine();
+       String b = sc.nextLine();
+       int len1  = a.length();
+       int len2 = b.length(); 
+       System.out.print(a.substring(len1-len2,len1).equals(b)); 
+    }
+}
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static boolean getCommon(String str1,String str2)
+    {
+        int l = str1.length()-1;
+        for(int i = str2.length()-1;i>=0;i--)
+        {
+            if(str1.charAt(l)!=str2.charAt(i))
+                return false;
+            l--;
+        }
+        return true;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        System.out.println(getCommon(str1,str2));
+    }
+}
