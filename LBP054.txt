@@ -1,0 +1,56 @@
+Given a string s, and an integer array indices of the same length. The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string, return shuffled string.
+
+Input Format
+
+a string and an array
+
+Constraints
+
+no
+
+Output Format
+
+a string
+
+Sample Input 0
+
+Hello
+Sample Output 0
+
+lololo
+Sample Input 1
+
+Prakash
+Sample Output 1
+
+shshsh
+Sample Input 2
+
+ab
+Sample Output 2
+
+ababab
+Sample Input 3
+
+Hai
+Sample Output 3
+
+aiaiai
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      String str =sc.nextLine();
+      String subString = str.substring(str.length()-2,str.length());  
+      for(int i = 1;i<=3;i++)
+      {
+          System.out.print(subString);
+      }  
+    }
+}

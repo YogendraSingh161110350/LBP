@@ -1,0 +1,59 @@
+Given an integer, create a function that returns the next prime. If the number is prime, return the number itself.
+
+Input Format
+
+a number
+
+Constraints
+
+no
+
+Output Format
+
+prime number
+
+Sample Input 0
+
+12
+Sample Output 0
+
+13
+Sample Input 1
+
+24
+Sample Output 1
+
+29
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static boolean isPrime(int num)
+    {
+        if(num==1)
+            return false;
+        for(int i = 2;i*i<=num;i++)
+        {
+            if(num%i==0)
+                return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt();
+       while(true)
+       {
+           if(isPrime(num))
+           {
+               System.out.print(num);
+               break;
+           }
+           num++;
+       }
+    }
+}

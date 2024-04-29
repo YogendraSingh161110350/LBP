@@ -1,0 +1,46 @@
+Email name should be starts with alphabet and should follw by number or underscore. It should contains either numbers or underscore finally ends with gmail.com only. Then given email id is true otherwise false.
+
+Input Format
+
+email id
+
+Constraints
+
+lowercase alphabet [a-z] followed by underscore or digit and gmail.com
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+abc@gmail.com
+Sample Output 0
+
+false
+Sample Input 1
+
+abc1@gmail.com
+Sample Output 1
+
+true
+Sample Input 2
+
+abc_@gmail.com
+Sample Output 2
+
+true
+
+import java.io.*;
+import java.util.*;
+
+
+public class Solution {
+
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       String str = sc.nextLine();
+       System.out.print(str.matches("[a-zA-Z]+[0-9|_]@gmail[.]com"));
+    }
+}

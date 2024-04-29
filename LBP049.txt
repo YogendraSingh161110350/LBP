@@ -1,0 +1,54 @@
+Accept video length in minutes the format is mm:ss in String format, create a function that takes video length and return it in seconds.
+
+Input Format
+
+video length in mm:ss
+
+Constraints
+
+no
+
+Output Format
+
+length in seconds
+
+Sample Input 0
+
+01:00
+Sample Output 0
+
+60
+Sample Input 1
+
+13:56
+Sample Output 1
+
+836
+Sample Input 2
+
+02:01
+Sample Output 2
+
+121
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getSecond(String str)
+    {
+        int minute = Integer.parseInt(str.split(":")[0]);
+        int second = Integer.parseInt(str.split(":")[1]);
+        return minute*60 + second;
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       System.out.print(getSecond(sc.next()));
+    }
+}

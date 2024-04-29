@@ -1,0 +1,106 @@
+Program to read date, month and year from the user and check whether it is magic date or not.
+Here are the rules for magic date.
+
+1) mm*dd is a 1-digit number that matches the last digit in YYYY
+2) mm*dd is a 2-digit number that matches the last two digits in YYYY
+3) mm*dd is a 3-digit number that matches the last three digits in YYYY
+
+Input Format
+
+three int values
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+1-1-2001
+Sample Output 0
+
+true
+Sample Input 1
+
+5-2-2010
+Sample Output 1
+
+true
+Sample Input 2
+
+5-1-2010
+Sample Output 2
+
+false
+Submissions: 89
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc =new Scanner(System.in);
+        String str = sc.nextLine();
+        String arr[] = str.split("-");//2006
+        String mul = (Integer.parseInt(arr[0])*Integer.parseInt(arr[1]))+"";//
+        int yearLength = arr[2].length()-1;
+        int monthLength = mul.length()-1;
+        while(monthLength>=0)
+        {
+                if(arr[2].charAt(yearLength)!=mul.charAt(monthLength))
+                {
+                    str = "";
+                }            
+               yearLength--;
+               monthLength --;    
+        }
+        System.out.print(!str.equals(""));
+    }
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static boolean getMagicDate(String date)
+    {
+        int day = Integer.parseInt(date.split("-")[0].trim());
+        int month = Integer.parseInt(date.split("-")[1].trim());
+        int year = Integer.parseInt(date.split("-")[2].trim());
+        Integer product = day*month;
+        while(product!=0)
+        {
+            int rem1 = product%10;
+            int rem2 = year%10;
+            if(rem1!=rem2)
+                return false;
+            product/=10;
+            year/=10;
+        }
+        return true;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String date = sc.next();
+        System.out.println(getMagicDate(date));
+    }
+}
