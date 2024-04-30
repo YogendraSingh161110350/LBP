@@ -1,0 +1,101 @@
+Given s string, implement a program to find max occurring character in the given string.
+
+Input Format
+
+A string
+
+Constraints
+
+No
+
+Output Format
+
+max occuuring character
+
+Sample Input 0
+
+welcome
+Sample Output 0
+
+e
+Sample Input 1
+
+java
+Sample Output 1
+
+a
+Sample Input 2
+
+aabbbccccddddd
+Sample Output 2
+
+d
+Submissions: 71
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      String str = sc.next();
+      int[] arr = new int['z'+1];  
+      for(int i = 0;i<str.length();i++)
+      {
+          ++arr[str.charAt(i)];
+      }  
+        int max = 0;
+        int res = 0;
+        for(int i='A';i<arr.length;i++)
+        {
+            
+           // System.out.println(i+" :: "+arr[i]);
+            if(arr[i]>max)
+            {
+                max = arr[i];
+                res = i;
+            }
+        }
+        System.out.print((char)(res));
+    }
+}
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine().toLowerCase();
+        int[] arr = new int['z'+1];
+        for(int i = 0;i<str.length();i++)
+        {
+            arr[str.charAt(i)]++;
+        }
+        int max=Integer.MIN_VALUE;
+        char c = ' ';
+        for(int i='a';i<='z';i++)
+        {
+            if(max<arr[i])
+            {
+                max=arr[i];
+                c=(char)i;
+            }
+        }
+        System.out.println(c);
+    }
+}
