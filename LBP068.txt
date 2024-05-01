@@ -1,0 +1,59 @@
+Create a function/method that takes, a word and returns true if the word has two consecutive identical letters.
+
+Input Format
+
+A string from the user
+
+Constraints
+
+No
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+loop
+Sample Output 0
+
+true
+Sample Input 1
+
+yummy
+Sample Output 1
+
+true
+Sample Input 2
+
+orange
+Sample Output 2
+
+false
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        boolean status =false;
+        for(int i = 0;i<str.length()-1;i++)
+        {
+            if(str.charAt(i)==str.charAt(i+1))
+            {
+                status = true;
+                break;
+            }
+        }
+        System.out.print(status);
+    }
+}

@@ -1,0 +1,46 @@
+Create a function/method that takes a string as a argument and returns a new string by removing all vowels from it
+
+Input Format
+
+a string from the user
+
+Constraints
+
+No
+
+Output Format
+
+A string
+
+Sample Input 0
+
+welcome
+Sample Output 0
+
+wlcm
+Sample Input 1
+
+demo
+Sample Output 1
+
+dm
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        for(int i=0;i<str.length();i++)
+        {
+            char ch = str.charAt(i);
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+                continue;
+            System.out.print(ch);
+        }
+    }
+}

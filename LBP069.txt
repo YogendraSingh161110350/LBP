@@ -1,0 +1,67 @@
+Andy, Ben and Charlotte are playing a board game. the three of them decided to come up with a new scoring system. A player's first initial ("A","B" and "C") denotes that players scoring a signle point. Given a string of capital letters. return an array of the player's score.
+
+Input Format
+
+A string from the user
+
+Constraints
+
+No
+
+Output Format
+
+Score
+
+Sample Input 0
+
+A
+Sample Output 0
+
+1 0 0
+Sample Input 1
+
+ABC
+Sample Output 1
+
+1 1 1
+Submissions: 67
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        for(int i = 0;i<str.length();i++)
+        {
+            char ch = str.charAt(i);
+            if(ch=='A')
+            {
+                a++;
+            }
+            else if(ch=='B')
+            {
+                b++;
+            }
+            else if(ch=='C')
+            {
+                c++;
+            }
+        }
+        System.out.print(a+" "+b+" "+c);
+    }
+}

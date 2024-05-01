@@ -1,0 +1,51 @@
+Write a Java program to take an input string and exchange the first and last word and reverse the middle word.
+
+Input Format
+
+a string
+
+Constraints
+
+no
+
+Output Format
+
+a string
+
+Sample Input 0
+
+Hello welcome to java
+Sample Output 0
+
+java ot emoclew Hello
+Sample Input 1
+
+java is very easy
+Sample Output 1
+
+easy yrev si java
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static StringBuffer reverseString(String str)
+    {
+        StringBuffer sb = new StringBuffer(str);
+        return sb.reverse();
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+        String[] arr = sc.nextLine().split(" ");
+        System.out.print(arr[arr.length-1]+" ");
+        for(int i = arr.length-2;i>=1;i--)
+        {
+            System.out.print(reverseString(arr[i])+" ");
+        }
+        System.out.print(arr[0]);
+    }
+}

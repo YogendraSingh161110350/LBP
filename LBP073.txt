@@ -1,0 +1,51 @@
+zipcodes consists of 5 consecutive digits. Given a string, write a function to determine whether the input is a valid zip code. a valid zipcode is as follows
+1. must contain only numbers.
+2. it should not contain any spaces.
+3. length should be only 5.
+
+Input Format
+
+A string
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+59001
+Sample Output 0
+
+true
+Sample Input 1
+
+853a7
+Sample Output 1
+
+false
+Sample Input 2
+
+73232
+Sample Output 2
+
+true
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.print(str.matches("[0-9]{5}"));
+      
+    }
+}

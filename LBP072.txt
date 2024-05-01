@@ -1,0 +1,50 @@
+Create a function that replaces all the vowels in a string with a specified character,
+
+Input Format
+
+A string from the user
+
+Constraints
+
+No
+
+Output Format
+
+A string
+
+Sample Input 0
+
+welcome
+#
+Sample Output 0
+
+w#lc#m#
+Sample Input 1
+
+prakash
+.
+Sample Output 1
+
+pr.k.sh
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine().toLowerCase();
+        String repl = sc.next();
+        for(int i=0;i<str.length();i++)
+        {
+            char ch = str.charAt(i);
+            if(ch=='a'||ch=='u'||ch=='o'||ch=='i'||ch=='e')
+                System.out.print(repl);
+            else 
+                System.out.print(ch);
+        }
+    }
+}

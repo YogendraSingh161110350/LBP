@@ -1,0 +1,69 @@
+Given a string S, the task is to remove all the duplicates in the given string.
+
+Input Format
+
+a string from the user
+
+Constraints
+
+remove all duplicates
+
+Output Format
+
+a string without duplicates
+
+Sample Input 0
+
+hello
+Sample Output 0
+
+helo
+Sample Input 1
+
+welcome
+Sample Output 1
+
+welcom
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+      Scanner sc= new Scanner(System.in);
+      String str = sc.nextLine();
+      String res = "";
+      for(int i = 0;i<str.length();i++)
+      {
+           char ch = str.charAt(i);
+           if(res.indexOf(ch)!=-1)
+               continue;
+          res+=ch;
+      }  
+        System.out.print(res);
+    }
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      Set<Character> res = new LinkedHashSet<>();  
+      for(int i=0;i<str.length();i++)
+      {
+          res.add(str.charAt(i));
+      }  
+        res.forEach(a->System.out.print(a));
+    }
+}
