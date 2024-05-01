@@ -1,0 +1,69 @@
+Someone has attempted to censor my strings by replacing every vowel with a *, l*k* th*s. Luckily, I've been able to find the vowels that were removed.
+Given a censored string and a string of the censored vowels, return the original uncensored string.
+
+Input Format
+
+censored string and removed vowels as string
+
+Constraints
+
+non-empty string
+
+Output Format
+
+updated string
+
+Sample Input 0
+
+w*lc*m*
+eoe
+Sample Output 0
+
+welcome
+Sample Input 1
+
+Wh*r* d*d my v*w*ls g*?
+eeioeo
+Sample Output 1
+
+Where did my vowels go?
+Sample Input 2
+
+*bcd*
+ae
+Sample Output 2
+
+abcde
+Sample Input 3
+
+*PP*RC*S*
+UEAE
+Sample Output 3
+
+UPPERCASE
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        int j = 0;
+        for(int i=0;i<s1.length();i++)
+        {
+            char ch = s1.charAt(i);
+            if(ch=='*')
+            {
+                System.out.print(s2.charAt(j));
+                j++;
+            }
+            else
+                System.out.print(ch);
+        }
+    }
+}
