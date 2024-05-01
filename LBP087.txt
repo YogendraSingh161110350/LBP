@@ -1,0 +1,73 @@
+Given a string S of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')', and in any positions ) so that the resulting parentheses string is valid. Formally, a parentheses string is valid if and only if: It is the empty string, or It can be written as AB (A concatenated with B), where A and B are valid strings, or It can be written as (A), where A is a valid string. Given a parentheses string, return the minimum number of parentheses we must add to make the resulting string valid.
+
+Input Format
+
+string from the user
+
+Constraints
+
+non-empty string
+
+Output Format
+
+minimum number of ( or ) required.
+
+Sample Input 0
+
+()
+Sample Output 0
+
+0
+Sample Input 1
+
+()(
+Sample Output 1
+
+1
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       String str = sc.nextLine();
+        int open = 0;
+        int close= 0;
+       for(int i = 0;i<str.length();i++)
+       {
+           char ch = str.charAt(i);
+           if(ch=='(')
+               open++;
+           else if(ch==')')
+              close++;
+       } 
+        System.out.print(Math.abs(open-close));
+    }
+}
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new  Scanner(System.in);
+        String str = sc.nextLine();
+        int res = 0;
+        for(int i = 0;i<str.length();i++)
+        {
+            char ch = str.charAt(i);
+            if(ch=='(')
+                res++;
+            else if(ch==')')
+                res--;
+        }
+        System.out.println(Math.abs(res));
+    }
+}
