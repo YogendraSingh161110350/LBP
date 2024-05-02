@@ -1,0 +1,88 @@
+Given a string containing unique letters, return a sorted string with the letters that don't appear in the string.
+
+Input Format
+
+A string from the user
+
+Constraints
+
+non empty string
+
+Output Format
+
+return missing characters in the given string
+
+Sample Input 0
+
+abcdefgpqrstuvwxyz
+Sample Output 0
+
+hijklmno
+Sample Input 1
+
+zyxwvutsrq
+Sample Output 1
+
+abcdefghijklmnop
+Sample Input 2
+
+abc
+Sample Output 2
+
+defghijklmnopqrstuvwxyz
+Sample Input 3
+
+abcdefhijklmnopqrstuvwxyz
+Sample Output 3
+
+g
+Submissions: 48
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine().toLowerCase();
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        for(int i = 0;i<alphabet.length();i++)
+        {
+              char ch = alphabet.charAt(i);
+               if(str.indexOf(ch)==-1)
+               {
+                   System.out.print(ch);
+               }
+        }
+    }
+}
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine().toLowerCase();
+        for(int i='a' ;i<='z';i++)
+        {
+            if(str.indexOf((char)i)==-1)
+                System.out.print((char)i);
+        }
+    }
+}
