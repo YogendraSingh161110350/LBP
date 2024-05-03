@@ -1,0 +1,44 @@
+Implement a program to read an array element and write on the screen.
+
+Input Format
+
+size of the array and array elements
+
+Constraints
+
+size<100
+
+Output Format
+
+the given array
+
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+1 2 3 4 5
+Sample Input 1
+
+8
+1 2 3 8 5 2 7 3
+Sample Output 1
+
+1 2 3 8 5 2 7 3
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        for(int i=0;i<num;i++)
+            System.out.print(sc.nextInt()+" ");
+    }
+}
