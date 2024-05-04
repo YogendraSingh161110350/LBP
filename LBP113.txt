@@ -1,0 +1,63 @@
+Implement a program to read array elements and find the max element in an array.
+
+Input Format
+
+size and array elements.
+
+Constraints
+
+size<100
+
+Output Format
+
+return max element
+
+Sample Input 0
+
+8
+1 22 33 4 8 9 88 99
+Sample Output 0
+
+99
+Sample Input 1
+
+5
+1 2 3 4 5
+Sample Output 1
+
+5
+Sample Input 2
+
+12
+1 2 3 4 5 6 7 8 9 -10 -11 -12
+Sample Output 2
+
+9
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getMax(int[] arr)
+    {
+        int max = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>max)
+                max = arr[i];
+        }
+        return max;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       int len = sc.nextInt();
+       int[] arr = new int[len];
+       for(int i = 0;i<len;i++)
+           arr[i] = sc.nextInt();
+        System.out.print(getMax(arr));
+    }
+}
