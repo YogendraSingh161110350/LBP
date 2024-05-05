@@ -1,0 +1,68 @@
+Implement a program to read array elements and find the second min element in an array.
+
+Input Format
+
+size and array elements
+
+Constraints
+
+size<100
+
+Output Format
+
+return second min element
+
+Sample Input 0
+
+5
+1 8 7 5 2
+Sample Output 0
+
+2
+Sample Input 1
+
+7
+10 11 12 7 8 9 -10
+Sample Output 1
+
+7
+Sample Input 2
+
+3
+1 2 3
+Sample Output 2
+
+2
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    private static int getNMinElmnt(int[] arr , int k)
+    {
+        for(int i = 0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr[k-1];
+    }
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      int len = sc.nextInt();
+      int[] arr = new int[len];
+      for(int i = 0;i<len;i++)
+          arr[i] = sc.nextInt();
+        System.out.print( getNMinElmnt(arr,2));
+    }
+}
