@@ -1,0 +1,72 @@
+Implement a program to read an array and sort array elements with 0s, 1s and 2s.
+
+Input Format
+
+size, array elements
+
+Constraints
+
+size<100
+
+Output Format
+
+print sorted elements
+
+Sample Input 0
+
+3
+1 0 2
+Sample Output 0
+
+0 1 2
+Sample Input 1
+
+4
+1 0 1 2
+Sample Output 1
+
+0 1 1 2
+Sample Input 2
+
+5
+1 1 0 2 2
+Sample Output 2
+
+0 1 1 2 2
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static void sort(int[] arr)
+    {
+        for(int i = 0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        sort(arr);
+        for(int a:arr)
+            System.out.print(a+" ");
+    }
+}

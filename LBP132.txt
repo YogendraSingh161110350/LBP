@@ -1,0 +1,89 @@
+Implement a program to read an array and replace every element with the greatest element on its right side.
+
+Input Format
+
+size, array elements
+
+Constraints
+
+size<100
+
+Output Format
+
+print updated array elements
+
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+5 5 5 5 5
+Sample Input 1
+
+6
+1 0 2 1 0 2
+Sample Output 1
+
+2 2 2 2 2 2
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getRightMax(int index,int[] arr)
+    {
+        int max = Integer.MIN_VALUE;
+        for(int i = index ;i<arr.length;i++)
+        {
+            if(max<arr[i])
+                max = arr[i];
+        }
+        return max;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+            arr[i] = sc.nextInt();
+     for(int i = 0;i<len;i++)
+     {
+         System.out.print(getRightMax(i,arr)+" ");
+     }   
+    }
+}
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      int len = sc.nextInt();
+      int[] arr = new int[len];
+      for(int i=0;i<len;i++)
+          arr[i] = sc.nextInt();
+      for(int i=0;i<len-1;i++)
+      {
+          int max = arr[i];
+          for(int j=i+1;j<len;j++)
+          {
+              if(max<arr[j])
+              {
+                  max=arr[j];
+              }
+          }
+          arr[i]=max;
+          System.out.print(arr[i]+" ");
+       }  
+        System.out.print(arr[len-1]);
+    }
+}

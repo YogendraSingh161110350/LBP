@@ -1,0 +1,63 @@
+Implement a program to find the unique elements present in the given array.
+
+Input Format
+
+size, array elements
+
+Constraints
+
+size<100
+
+Output Format
+
+print unique elements present in the array
+
+Sample Input 0
+
+5
+1 1 2 3 4
+Sample Output 0
+
+1 2 3 4
+Sample Input 1
+
+6
+1 1 1 1 1 2
+Sample Output 1
+
+1 2
+Sample Input 2
+
+7
+1 1 1 2 2 2 3
+Sample Output 2
+
+1 2 3
+Submissions: 44
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc =new Scanner(System.in);
+       int len = sc.nextInt();
+       Set<Integer> set = new LinkedHashSet<Integer>();
+       for(int i = 0;i<len;i++)
+       {
+          set.add(sc.nextInt());
+       } 
+        set.forEach(a->{
+            System.out.print(a+" ");
+        });
+    }
+}
