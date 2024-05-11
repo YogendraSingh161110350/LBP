@@ -1,0 +1,66 @@
+
+Write a function that retrieves the last n elements from an array.
+
+Input Format
+
+size, an array and N value
+
+Constraints
+
+return 0 if n exceeds size of the array
+
+Output Format
+
+last N elements
+
+Sample Input 0
+
+5
+1 2 3 4 5
+1
+Sample Output 0
+
+5
+Sample Input 1
+
+6
+4 3 9 9 7 6
+3
+Sample Output 1
+
+9 7 6
+Sample Input 2
+
+5
+1 2 3 4 5
+7
+Sample Output 2
+
+0
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        int occ = sc.nextInt();
+        if(occ>len)
+            System.out.print(0);
+        else{
+        for(int i = len-occ;i<len;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+    }
+}

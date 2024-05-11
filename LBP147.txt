@@ -1,0 +1,126 @@
+Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.
+
+Input Format
+
+size and an array
+
+Constraints
+
+Dn't count negative numbers
+
+Output Format
+
+sum of two smallest positive numbers
+
+Sample Input 0
+
+5
+19 5 42 2 77
+Sample Output 0
+
+7
+Sample Input 1
+
+4
+2 9 6 -1
+Sample Output 1
+
+8
+Sample Input 2
+
+10
+879 953 694 -847 342 221 -91 -723 791 -587
+Sample Output 2
+
+563
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static void sortArray(int[] arr)
+    {
+        for(int i = 0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                //swaping condtion
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        //getting array form Console
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        //to sort array
+        sortArray(arr);
+        //adding first 2 elements of array
+        int sum = 0;
+        int count = 0;
+       for(int i = 0;i<len;i++)
+       {
+           if(arr[i]<0)
+               continue;
+           count++;
+          if(count==3)
+          {
+               break;
+          }
+            sum+=arr[i];
+       }
+        System.out.print(sum);
+    }
+}
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++)
+            arr[i] = sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        int count=1;
+        int sum=0;
+        for(int m:arr)
+        {
+            
+            if(m>0 && count<=2)
+            {
+                sum+=m;
+                count++;
+            }
+        }
+        System.out.print(sum);
+    }
+}
