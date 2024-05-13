@@ -1,0 +1,75 @@
+Create a function thats takes an array of integers and returns true if every number is prime. Otherwise, return false.
+
+Input Format
+
+size and an array
+
+Constraints
+
+1 is not a prime number.
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+false
+Sample Input 1
+
+9
+2 3 5 7 13 17 19 23 29
+Sample Output 1
+
+true
+Sample Input 2
+
+3
+1 5 3
+Sample Output 2
+
+false
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    // to check number is prime or not, take integer number and return boolean value
+    private static boolean isPrime(int num)
+    {
+        if(num==1)
+            return false;
+        for(int i = 2;i*i<=num;i++)
+        {
+            if(num%i==0)
+                return false;
+        }
+        return true;
+    }
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len ;i++)
+        {
+            arr[i] = sc.nextInt();      
+        } 
+        boolean status = true;
+        for(int a:arr)
+        {
+            if(!isPrime(a))
+            {
+                status = false;
+                break;
+            }
+        }
+        System.out.print(status);
+    }
+}
