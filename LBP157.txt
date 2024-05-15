@@ -1,0 +1,68 @@
+Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
+
+Input Format
+
+an array from the user
+
+Constraints
+
+no
+
+Output Format
+
+Boom! or "there is no 7 in the array".
+
+Sample Input 0
+
+7
+1 2 3 4 5 6 7
+Sample Output 0
+
+Boom!
+Sample Input 1
+
+4
+8 6 33 100
+Sample Output 1
+
+there is no 7 in the array
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static boolean isSevenExist(int num)
+    {
+        while(num!=0)
+        {
+            int rem = num%10;
+            if(rem==7)
+                return true;
+            num/=10;
+        }
+        return false;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        for(int a:arr)
+        {
+            if(isSevenExist(a))
+            {
+                System.out.print("Boom!");
+                return ;
+            }
+                
+        }
+        System.out.print("there is no 7 in the array");
+    }
+}
