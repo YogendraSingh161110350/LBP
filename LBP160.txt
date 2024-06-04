@@ -1,0 +1,115 @@
+Create a function that returns true if each pair of adjacent numbers in an array shares at least one digit and false otherwise.
+
+Input Format
+
+array size and array elements
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+5
+12 13 17 19 79
+Sample Output 0
+
+true
+Sample Input 1
+
+6
+33 53 6351 12 2242 44
+Sample Output 1
+
+true
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static boolean isAdjaShare(int f, int s)
+    {
+        String ff  = String.valueOf(f);
+        String ss  = String.valueOf(s);
+        for(int i = 0;i<ff.length();i++)
+        {
+            if(ss.contains(String.valueOf(ff.charAt(i))))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        boolean flag = true;
+        for(int i = 0;i<len-1;i++)
+        {
+            if(!isAdjaShare(arr[i],arr[i+1]))
+            {
+                flag = false;
+                break;
+            }
+        }
+        System.out.print(flag);
+    }
+}
+
+
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
+public class Solution
+{
+     private static boolean isContains(int a,int num)
+        {
+            while(num!=0)
+            {
+                int rem=num%10;
+                if(rem==a)
+                    return true;
+                num/=10;
+            }
+            return false;
+        }
+    public static void main(String[] args) 
+    {
+        
+       
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+        int count=0;
+        for(int i=0;i<len;i++)
+            arr[i] = sc.nextInt();
+        for(int i=0;i<len-1;i++)
+        {
+            int temp = arr[i];
+            while(temp!=0)
+            {
+                if(isContains(temp%10,arr[i+1]))
+                {
+                    count++;
+                    break;
+                }
+                temp/=10;    
+            }
+            
+        }
+        System.out.print(count==(len-1));
+    }
+}
