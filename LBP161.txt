@@ -1,0 +1,92 @@
+Write a function that returns true if two arrays, when combined, form a consecutive sequence. A consecutive sequence is a sequence without any gaps in the integers, e.g. 1, 2, 3, 4, 5 is a consecutive sequence, but 1, 2, 4, 5 is not.
+
+Input Format
+
+two array sizes and array elements
+
+Constraints
+
+no
+
+Output Format
+
+true or false
+
+Sample Input 0
+
+4
+12 13 17 19
+4
+14 16 15 18
+Sample Output 0
+
+true
+Sample Input 1
+
+4
+7 4 5 1
+3
+2 3 6
+Sample Output 1
+
+true
+
+
+import java.io.*;
+        import java.util.*;
+        import java.text.*;
+        import java.math.*;
+        import java.util.regex.*;
+
+        public class Solution {
+            public static void main(String args[] ) throws Exception 
+            {
+                Scanner sc  = new Scanner(System.in);
+                int len1 = sc.nextInt();
+                int arr1[]= new int[len1];
+                for(int i = 0;i<len1;i++)
+                    arr1[i] = sc.nextInt();
+                
+                int len2 = sc.nextInt();
+                int[] arr2 = new int[len2];
+                for(int i = 0;i<len2;i++)
+                    arr2[i] = sc.nextInt();
+                
+                int len = len1+len2;
+                
+                int[] arr = new int[len];
+                int k = 0;
+                for(int i = 0;i<len1;i++)
+                {
+                    arr[k++] = arr1[i];
+                }
+                for(int i = 0;i<len2;i++)
+                {
+                    arr[k++] = arr2[i];
+                }
+                
+                for(int i = 0;i<len;i++)
+                {
+                    for(int j = i+1;j<len;j++)
+                    {
+                        if(arr[i]>arr[j])
+                        {
+                            int temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;;
+                        }
+                    }
+                }
+              
+               boolean flag = true;
+                for(int i = 0;i<len-1;i++)
+                {
+                    if(arr[i]-arr[i+1]!=-1)
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                System.out.print(flag);
+            }
+        }
