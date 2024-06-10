@@ -1,0 +1,103 @@
+Write a function that accepts an array of numbers (where each number appears three times except for one which appears only once) and finds that unique number in the array and returns it.
+
+Input Format
+
+array size and elements
+
+Constraints
+
+no
+
+Output Format
+
+return non-repeated number
+
+Sample Input 0
+
+4
+2 2 3 2
+Sample Output 0
+
+3
+Sample Input 1
+
+7
+0 1 0 1 0 1 99
+Sample Output 1
+
+99
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int len =sc.nextInt();
+       int[] arr = new int[len]; 
+       for(int i = 0;i<len;i++)
+           arr[i] = sc.nextInt();
+        boolean flag = false;  
+       for(int i = 0;i<len;i++)
+       {
+               int count = 0;
+           for(int j = 0;j<len;j++)
+           {
+              
+               if(arr[i]==arr[j])
+               {
+                   flag = true;
+                   count++;
+               }
+               if(count==2)
+               {
+                   flag = false;
+                   break;
+               }
+           }
+           if(flag)
+        {
+            System.out.print(arr[i]);
+               break;
+        }
+       }
+        
+    }
+}
+
+===============
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+            arr[i] = sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            int c = 0;
+            for(int j=0;j<n;j++)
+            {
+                
+                if(i!=j && arr[i]==arr[j])
+                {
+                    c++; 
+                    break;
+                }
+            }
+            if(c==0)
+            {
+                System.out.print(arr[i]);
+                break;
+            }
+        }
+    }
+}

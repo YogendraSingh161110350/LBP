@@ -1,0 +1,67 @@
+	
+	Arun is obsessed with primes, especially five. He considers a number to be luckiest if it has the highest number of five in it. If two numbers have the same frequency of five, Arun considers the last occurence of them to be luckiest, and if there is no five in any number, the first given number is considered luckiest. Help him choose the luckiest number.
+
+Input Format
+
+array size and elements
+
+Constraints
+
+no
+
+Output Format
+
+return luckiest number
+
+
+
+===================================
+	import java.io.*;
+        import java.util.*;
+        import java.text.*;
+        import java.math.*;
+        import java.util.regex.*;
+
+        public class Solution 
+        {
+            private static int  getFive(int num)
+            {
+                int countOfFive = 0;
+                while(num!=0)
+                {
+                    int rem = num%10;
+                    if(rem==5)
+                        countOfFive++;
+                    num/=10;
+                }
+                return countOfFive;
+            }
+            private static int luckiestNumber(int arr[])
+            {
+                int lukiestNumber = arr[0];
+                int maxFiveCount = -1;
+                for(int a:arr)
+                {
+                    int fiveCount = getFive(a);
+                    if(fiveCount==0)
+                        continue;
+                    
+                    if(fiveCount>=maxFiveCount)
+                    {
+                        maxFiveCount=fiveCount;
+                        lukiestNumber = a;
+                    }
+                }
+                return lukiestNumber ;
+            }
+            public static void main(String args[] ) throws Exception
+            {
+                Scanner sc = new Scanner(System.in);
+                int len = sc.nextInt();
+                int[] arr = new int[len];
+                for(int i= 0;i<len;i++)
+                    arr[i] = sc.nextInt();
+                System.out.print(luckiestNumber(arr));
+                    
+            }
+        }
