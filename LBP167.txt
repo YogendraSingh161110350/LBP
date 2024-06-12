@@ -1,0 +1,62 @@
+You are playing an online game. In the game, a numbers is displayed on the screen. In order to win the game, you have to count the trailing zeros in the factorial value of the given number. Write an algorithm to count the trailing zeros in the factorial value of the given number.
+
+Input Format
+
+an integer num, representing the number displayed on the screen.
+
+Constraints
+
+no
+
+Output Format
+
+the count of trailing zeros in the factorial of the given number.
+
+Sample Input 0
+
+5
+Sample Output 0
+
+1
+Sample Input 1
+
+0
+Sample Output 1
+
+0
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static int getralingZero(int num)
+    {
+        int count = 0;
+        while(num!=0)
+        {
+            if(num%10!=0)
+                break;
+            count++;
+            num/=10;
+        }
+        return count;
+    }
+    private static int getFecto(int num)
+    {
+        int fect = 1;
+        for(int i = 1;i<=num;i++)
+        {
+            fect*=i;
+        }
+        return fect;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int fect = getFecto(num);
+        System.out.print(getralingZero(fect));
+    }
+}
