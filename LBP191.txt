@@ -25,40 +25,34 @@ Sample Output 1
 
 U
 
-
-
-
-
-
------------------------Solution-------------------
-
 import java.io.*;
 import java.util.*;
 
-public class Solution
+public class Solution 
 {
-    private static int getValue(int num)
+    private static int sumOfDigit(int num)
     {
-        if(num<=26)
-            return num;
         int sum = 0;
         while(num!=0)
         {
-            int rem = num%10;
-            sum +=rem;
+            sum+=num%10;
             num/=10;
         }
-        if(sum>26)
-            return getValue(sum);
-        else 
-            return sum;
+        return sum;
     }
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        char ch = (char)(getValue(num)+64);
-        System.out.print(ch);
-        
+        int studentId = sc.nextInt();
+        while(true)
+        {
+            if(studentId<=26)
+            {
+                System.out.print((char)(studentId+64));
+              break;   
+            }
+            studentId = sumOfDigit(studentId);     
+        }
+       
     }
 }

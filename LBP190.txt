@@ -31,68 +31,45 @@ Sample Input 1
 Sample Output 1
 
 Yes
+Submissions: 14
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
 
 
-
-
-
-
-
-
-
-
-
-
-==============================Solution============
 import java.io.*;
 import java.util.*;
 
-public class Solution 
+public class Solution
 {
-    private static ArrayList<Integer> getArrayList(int num)
+    private static List<Integer> getDigitList(int num)
     {
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         while(num!=0)
         {
-            int rem = num%10;
-            list.add(rem);
+            list.add(num%10);
             num/=10;
         }
         return list;
     }
-    public static void main(String... args)
+    public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        ArrayList<Integer> list = getArrayList(num);
-        int arr[] = new int[list.size()];
-        int k=0;
-        for(Integer a:list){
-            arr[k] = a;
-            k++;
-        }
-            
-        for(int i=0;i<arr.length;i++)
-        {
-            for(int j=i;j<arr.length;j++)
-            {
-                if(arr[i]>arr[j])
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
-        String ans = "Yes";
-       for(int i = 0;i<arr.length-1;i++)
-       {
-           if(arr[i+1]-arr[i]>2)
-           {
-               ans = "No";
-               break;
-           }
-       }
-        System.out.print(ans);
+      Scanner sc = new Scanner(System.in);
+      int num = sc.nextInt();  
+      List<Integer> list =  getDigitList(num);
+      Collections.sort(list);
+      boolean flag = true ; 
+      for(int i = 0;i<list.size()-1;i++)
+      {
+          if(list.get(i+1)-list.get(i)>2)
+          {
+              flag = false;
+              break;
+          }
+      }
+       System.out.print(flag?"Yes":"No");
     }
 }

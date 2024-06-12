@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 Write a program to find the digital root of a given number. Digital root is the recursive sum of digits in the given number (until single digit is arrived)
 
 Input Format
@@ -26,72 +24,37 @@ Sample Input 1
 Sample Output 1
 
 3
-==========Solution==============
 
 
-
-
-public class Solution
-{
-    private static int getRecurssiveSum(int n)
-    {
-        int sum = 0;
-        while(n!=0)
-        {
-            int rem = n%10;
-            sum+=rem;
-            n/=10;
-        }
-        if(sum<=9)
-            return sum;
-        else
-            return getRecurssiveSum(sum);
-        
-    }
-    public static void main(String[] args) 
-    {
-      Scanner sc = new Scanner(System.in);
-      int num = sc.nextInt();
-        System.out.print(getRecurssiveSum( num));
-    }
-}
-
-
-
-
-
-
---------------------------Second Approach
 
 import java.io.*;
 import java.util.*;
 
-public class Solution 
+public class Solution
 {
-    private static int getDigitalSum(int num)
+    private static int getDigitSum(int num)
     {
-        int sum  = 0;
+        int sum = 0;
         while(num!=0)
         {
             int rem = num%10;
-            sum +=rem;
+            sum +=rem; 
             num/=10;
         }
         return sum;
     }
     public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         while(true)
         {
-            int digitalSum = getDigitalSum(num);
-            if(digitalSum>=0 && digitalSum<=9)
-            {
-                System.out.print(digitalSum);
-                break;
-            }
-            num = digitalSum;
+          if(num<=9)
+          {
+              System.out.print(num);
+              break;
+          }   
+          num = getDigitSum(num);   
         }
     }
 }
