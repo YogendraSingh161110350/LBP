@@ -1,0 +1,50 @@
+Implement a progra to update every array element with multiplication of previous and next numbers in array.
+
+Input Format
+
+size and array elements
+
+Constraints
+
+no
+
+Output Format
+
+updated array
+
+Sample Input 0
+
+6
+1 2 3 4 5 6
+Sample Output 0
+
+2 3 8 15 24 5
+Sample Input 1
+
+4
+10 20 30 40
+Sample Output 1
+
+20 300 800 30	
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+        int len  = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0;i<len;i++)
+            arr[i] = sc.nextInt();
+        System.out.print(arr[1]+" ");
+        for(int i = 1;i<len-1;i++)
+        {
+            System.out.print(arr[i-1]*arr[i+1]+" ");
+        }
+        System.out.print(arr[len-2]);
+    }
+}
