@@ -31,16 +31,6 @@ Sample Output 1
 Yes
 
 
-
-======================Solution By Yogendra singh==================================
-
-
-
-
-
-
-
-
 import java.io.*;
 import java.util.*;
 
@@ -49,17 +39,19 @@ public class Solution
     public static void main(String[] args) 
     {
        Scanner sc = new Scanner(System.in);
-       int[] arr = new int[5];
-        for(int i=0;i<5;i++)
-       {
-           arr[i] = sc.nextInt();
-       }  
-       
-        int l = arr[0]+arr[1]+arr[2];
-        int w = arr[3]+arr[4];
-        if(w>=l)
-            System.out.print("Yes");
-        else 
+       int w1 = sc.nextInt();
+        int w2 = sc.nextInt();
+        int w3 = sc.nextInt();
+        int l1 = sc.nextInt();
+        int l2 = sc.nextInt();
+        
+        if((w1+w2+w3)<=(l1+l2))
+        {
+           System.out.print("Yes"); 
+        }
+        else
+        {
             System.out.print("No");
+        }
     }
 }
