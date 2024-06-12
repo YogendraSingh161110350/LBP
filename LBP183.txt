@@ -29,31 +29,20 @@ Sample Output 1
 
 
 
-
-
-
-
-------------------------Solution--------------------
-
-
 import java.io.*;
 import java.util.*;
 
-public class Solution
-{
+public class Solution {
+
     public static void main(String[] args)
     {
-      Scanner sc = new Scanner(System.in);
-      int len = sc.nextInt();
-       int[] arr = new int[len];
-        for(int i=0;i<len;i++)
-       {
-           arr[i] = sc.nextInt();
-       } 
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
         int sum = 0;
-        for(int i=0;i<len;i++)
+        for(int i = 0;i<len;i++)
         {
-            sum+=arr[i]*(arr[i]+1);
+            int num = sc.nextInt();
+            sum+= num*(num+1);
         }
         System.out.print(sum);
     }

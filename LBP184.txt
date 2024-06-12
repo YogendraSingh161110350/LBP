@@ -1,0 +1,60 @@
+You are given an array of integers, a of size n, Your task is to find the number of elements whose positions will remain unchanged after sorted in ascending order.
+
+Input Format
+
+array size and elements
+
+Constraints
+
+no
+
+Output Format
+
+unchanged count
+
+Sample Input 0
+
+5
+1 2 5 3 4
+Sample Output 0
+
+2
+Sample Input 1
+
+10
+1 10 2 9 3 8 4 7 5 6
+Sample Output 1
+
+1
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int[] arr = new int[len];
+         int[] arr1 = new int[len];
+        for(int i = 0;i<len;i++)
+        {
+            arr[i] =sc.nextInt();
+            arr1[i] = arr[i];
+        }
+       
+        Arrays.sort(arr);
+        int count = 0;
+        for(int i = 0;i<len;i++)
+        {
+            //System.out.println(arr[i]+" "+arr1[i]);
+            if(arr[i]==arr1[i])
+            {
+               count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
