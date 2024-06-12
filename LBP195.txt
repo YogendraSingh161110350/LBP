@@ -36,28 +36,34 @@ Sample Output 2
 
 Outstanding
 
----------------------------soution-----------------------------------------
-
 
 import java.io.*;
 import java.util.*;
 
-public class Solution 
-{
-    public static void main(String[] args) 
+public class Solution {
+
+    public static void main(String[] args)
     {
-       Scanner sc = new  Scanner(System.in);
-       int num = sc.nextInt();
-       if(num>=30&&num<=100)
+       Scanner sc = new Scanner(System.in);
+       int num = sc.nextInt(); 
+       if(num>=30 && num<=100)
        {
            if(num>=30 && num<=50)
+           {
                System.out.print("Average");
+           }
            else if(num>=51 && num<=60)
+           {
                System.out.print("Good");
+           }
            else if(num>=61 && num<=80)
-               System.out.print("Excellent");
-           else  
+           {
+                System.out.print("Excellent");   
+           }
+           else if(num>=81 && num<=100)
+           {
                System.out.print("Outstanding");
+           }
        } 
     }
 }

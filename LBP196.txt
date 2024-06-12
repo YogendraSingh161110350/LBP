@@ -26,26 +26,17 @@ Sample Output 1
 1
 
 
-
---------------------------------Solution-------------------------------------
-
-
-
-
-
-
-
 import java.io.*;
 import java.util.*;
 
 public class Solution {
 
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-       Scanner sc = new Scanner(System.in);
-       int a = sc.nextInt();
-       int b = sc.nextInt();
-       int c = sc.nextInt();
-       System.out.print((int)Math.pow(a,b)%c); 
+        Scanner sc = new Scanner(System.in);
+        int b = sc.nextInt();
+        int e = sc.nextInt();
+        int m = sc.nextInt();
+        System.out.print((int)Math.pow(b,e)%m);
     }
 }

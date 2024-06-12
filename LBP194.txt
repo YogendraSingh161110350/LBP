@@ -1,4 +1,5 @@
-Yogendra a technical person wants to update his password for every 15 days, to create a new password, he is converting all lower case letters to upper case and upper case letters to lower case, help Yogendra to update password.
+
+Prakash a technical person wants to update his password for every 15 days, to create a new password, he is converting all lower case letters to upper case and upper case letters to lower case, help prakash to update password.
 
 Input Format
 
@@ -30,36 +31,38 @@ welcome
 Sample Output 2
 
 WELCOME
+Submissions: 19
+Max Score: 1
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
 
 
-
-----------------------------Solution-----------------------------------------------
 
 
 
 import java.io.*;
 import java.util.*;
 
-public class Solution 
-{
-    public static void main(String[] args) 
+public class Solution {
+
+    public static void main(String[] args)
     {
        Scanner sc = new Scanner(System.in);
-       String str = sc.nextLine();
-        //taking StringBuffer for reducing space complexity
-        StringBuffer sb= new StringBuffer();
-        for(int i=0;i<str.length();i++)
-        {
-            char ch  = str.charAt(i);
-            if(ch>='a' && ch<='z')
-            {
-                sb.append(Character.toUpperCase(ch));
-            }
-            else if(ch>='A' && ch<='Z')
-            {
-                sb.append(Character.toLowerCase(ch));
-            }
-        }
-        System.out.print(sb);
+       String str = sc.next();
+       for(int i = 0;i<str.length();i++)
+       {
+           char ch = str.charAt(i);
+           if(ch>='a' && ch<='z')
+           {
+               System.out.print((char)(ch-32));
+           }
+           else if(ch>='A' && ch<='Z')
+           {
+               System.out.print((char)(ch+32));
+           }
+       } 
     }
 }

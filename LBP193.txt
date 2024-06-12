@@ -33,10 +33,6 @@ Sample Output 2
 
 
 
-
-
-
-
 import java.io.*;
 import java.util.*;
 
@@ -46,9 +42,12 @@ public class Solution {
     {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        if(num%10==0)
-            System.out.print(num);
+        int rem = num%10;
+        if(rem!=0)
+        {
+            System.out.print(num+(10-rem));
+        }
         else
-            System.out.print(num+10-num%10);
+            System.out.print(num);
     }
 }

@@ -28,42 +28,38 @@ Sample Output 1
 
 0
 
-
----------------------Solution----------------------------------
-
-
-
-
-
 import java.io.*;
 import java.util.*;
 
-public class Solution 
-{
-    public static void main(String[] args) 
+public class Solution {
+
+    public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
-        String str1 = sc.nextLine();
-        String str2 = sc.nextLine();
+       Scanner sc = new Scanner(System.in);
+       String s1 = sc.next();
+       String s2 = sc.next();
         StringBuffer sb1 = new StringBuffer();
-        StringBuffer sb2 = new StringBuffer();
-        for(int i=str1.length()-1;i>=0;i--)
-        {
-            char ch = str1.charAt(i);
-            if(ch=='#')
-                i--;
-            else
-                sb1.append(ch);
-        }
-       for(int i=str2.length()-1;i>=0;i--)
+       for(int i =s1.length()-1;i>=0;i--)
        {
-           char ch = str2.charAt(i);
+           char ch = s1.charAt(i);
            if(ch=='#')
+           {
                i--;
-           else
-               sb2.append(ch);
+               continue;
+           }
+           sb1.append(ch);
        }
-       
-        System.out.print(sb1.toString().equals(sb2.toString())?"1":"0");
+        StringBuffer sb2 = new StringBuffer();
+       for(int i =s2.length()-1;i>=0;i--)
+       {
+           char ch = s2.charAt(i);
+           if(ch=='#')
+           {
+               i--;
+               continue;
+           }
+           sb2.append(ch);
+       }
+       System.out.print(sb1.toString().equals(sb2.toString())?1:0);
     }
 }
