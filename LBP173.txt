@@ -31,47 +31,26 @@ Sample Output 2
 
 10
 
-
-
---------------------Solution------------------------
 import java.io.*;
 import java.util.*;
 
-public class Solution
+public class Solution 
 {
-    private static int getNumber(String str)
+    private static int HexaToDecimal(String hex)
     {
-        // for checking iteration
-        int count= 0;
-        //for adding number
-        int num = 0;
-        for(int i=str.length()-1;i>=0;i--)
+        int decimal = 0;
+        int count  =0;
+        for(int i = hex.length()-1;i>=0;i--)
         {
-               char ch = str.charAt(i);
-               if(ch=='A')
-                   //formula of number in the base of Base 17
-                   num+=(Math.pow(17,count)*10);
-               else if(ch=='B')
-                   num+=(Math.pow(17,count)*11);
-                else if(ch=='C') 
-                    num+=(Math.pow(17,count)*12);
-                else if(ch=='D')
-                    num+=(Math.pow(17,count)*13);
-                else if(ch=='E') 
-                    num+=(Math.pow(17,count)*14);
-                else if(ch=='F')
-                    num+=(Math.pow(17,count)*15);
-                else if(ch=='G')
-                    num+=(Math.pow(17,count)*16);
-                count++;
-                    
+            char ch = hex.charAt(i);
+            decimal+= (ch-55)*Math.pow(17,count++);
         }
-        return num;
+        return decimal;
     }
     public static void main(String[] args)
     {
        Scanner sc = new Scanner(System.in);
-       String str = sc.nextLine();
-       System.out.print(getNumber(str));
+       String hex = sc.nextLine();
+       System.out.print(HexaToDecimal(hex));
     }
 }
