@@ -1,0 +1,80 @@
+Implement a program to count number of prime digits present in the matrix.
+
+Input Format
+
+a 3x3 matrix
+
+Constraints
+
+no
+
+Output Format
+
+prime digits count
+
+Sample Input 0
+
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+
+4
+Sample Input 1
+
+10 11 12
+13 14 15
+16 17 18
+Sample Output 1
+
+4
+Sample Input 2
+
+1 0 0
+0 1 0
+0 0 1
+Sample Output 2
+
+0
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    private static int countPrimeDigit(int num)
+    {
+        int count=0;
+        while(num!=0)
+        {
+            int rem = num%10;
+            if(rem==2||rem==7||rem==5||rem==3)
+                count++;
+            num/=10;
+        }
+        return count;
+    }
+    public static void main(String[] args) 
+    {
+       Scanner sc = new Scanner(System.in);
+       int[][] arr = new int[3][3];
+       for(int i = 0;i<3;i++)
+       {
+           for(int j = 0;j<3;j++)
+           {
+               arr[i][j] = sc.nextInt();
+           }
+       } 
+        int sum = 0;
+        for(int i = 0;i<3;i++)
+        {
+            for(int j = 0;j<3;j++)
+            {
+                
+                    sum+=countPrimeDigit(arr[i][j]);
+            }
+        }
+        System.out.print(sum);
+    }
+}
