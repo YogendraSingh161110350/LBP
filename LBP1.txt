@@ -19,6 +19,7 @@ Sample Output 0
 
 even
 Sample Input 1
+
 13
 Sample Output 1
 
@@ -31,11 +32,8 @@ Sample Output 2
 invalid
 
 
-<<<<<<< HEAD
 This is importnat Question please do once 
-=======
-this line of code i want change from the GitHub platform directly
->>>>>>> 942617cf1d44b9b715601bc8cd6dac7ca88ef965
+this is sedo
 
 
 
